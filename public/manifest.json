@@ -1,0 +1,22 @@
+{
+  "name": "MedLingo AI — Medical Prescription Translator",
+  "short_name": "MedLingo AI",
+  "description": "Smart medical prescription translator, medicine visual analyzer, search index, and AI health assistant in multiple languages.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/fluency/192/medical-doctor.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://img.icons8.com/fluency/512/medical-doctor.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

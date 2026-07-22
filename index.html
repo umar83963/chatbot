@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e1b4b" />
+    
+    <!-- SEO and Primary Metadata -->
+    <title>MedLingo AI — Smart Medical Prescription Translator & AI Health Assistant</title>
+    <meta name="description" content="Translate handwritten prescriptions, scan doctor instructions, look up medicines, and consult our safety-compliant medical AI chatbot in multiple languages with MedLingo AI." />
+    <meta name="keywords" content="medical translator, prescription scanner, medicine search, pill identifier, drug side effects, dosage assistant, medical AI chatbot, MedLingo AI, clinical translator" />
+    <meta name="author" content="MedLingo AI" />
+
+    <!-- Open Graph (Facebook, LinkedIn, Discord) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MedLingo AI — Smart Medical Prescription Translator & AI Health Assistant" />
+    <meta property="og:description" content="Translate prescriptions, scan pill labels, identify drugs, and chat with a safe clinical AI Health Assistant." />
+    <meta property="og:image" content="https://img.icons8.com/fluency/512/medical-doctor.png" />
+    <meta property="og:site_name" content="MedLingo AI" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MedLingo AI — Smart Medical Prescription Translator" />
+    <meta name="twitter:description" content="A comprehensive full-stack platform for clinical prescription translation, medicine lookup, and safety-compliant medical chat." />
+    <meta name="twitter:image" content="https://img.icons8.com/fluency/512/medical-doctor.png" />
+
+    <!-- Favicon and PWA Manifest -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/medical-doctor.png" />
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/192/medical-doctor.png" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600/30 selection:text-blue-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('MedLingo SW: Registered successfully with scope:', reg.scope))
+            .catch(err => console.error('MedLingo SW: Registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
+

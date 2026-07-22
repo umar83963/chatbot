@@ -1,0 +1,6 @@
+{
+  "name": "MedLingo AI",
+  "description": "AI-powered medical prescription translator, analyzer, and OCR scanner with multi-language support, speech-to-text, and professional PDF reports.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
