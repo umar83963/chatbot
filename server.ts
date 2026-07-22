@@ -804,8 +804,9 @@ app.delete("/api/history/:id", (req, res) => {
 // ==========================================
 
 async function startServer() {
-  if (process.env.NODE_ENV !== "production") {
-    // Development Mode with Vite Middleware
+  const isProduction = process.env.NODE_ENV === "production";
+
+  if (!isProduction) {
     console.log("Configuring development environment using Vite middleware...");
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -813,17 +814,17 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    // Production Mode serving compiled static bundle
     console.log("Configuring production environment...");
     const distPath = path.join(process.cwd(), "dist");
+    console.log("Serving static files from:", distPath);
     app.use(express.static(distPath));
-    app.get("*all", (req, res) => {
+    app.get("*", (_req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`MedLingo AI server running successfully on http://localhost:${PORT}`);
+    console.log(`MedLingo AI server running on port ${PORT} [${isProduction ? "production" : "development"}]`);
   });
 }
 
